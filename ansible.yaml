@@ -1,0 +1,29 @@
+---
+- hosts: "localhost"
+  connection: local
+  become: true
+  tasks:
+  - name: Add repository Zabbix
+    ansible.builtin.yum_repository:
+      name: zabbix
+      description: Zabbix Official Repository - $basearch
+      baseurl: https://repo.zabbix.com/zabbix/6.4/rhel/8/$basearch/
+      enabled: yes
+      gpgcheck: yes
+      gpgkey: https://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-A14FE591
+
+  - name: install packages
+    ansible.builtin.dnf:
+      name: epel-release
+      state: "latest" 
+
+  - name: install packages
+    ansible.builtin.dnf:
+      name:
+        - zabbix-agent2
+        - zabbix-agent2-plugin-*
+        - rsyslog
+        - smartmontools
+        - vnstat
+        - lm_sensors
+      state: "latest" 
