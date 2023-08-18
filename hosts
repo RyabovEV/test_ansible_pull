@@ -1,0 +1,39 @@
+[localhost]
+127.0.0.1
+
+[rusmainbots] 
+#bot2 ansible_host=10.101.1.2 soft=cbot-sb botNumber=2
+bot4 ansible_host=10.101.1.4 soft=cbot-gs botNumber=4
+bot6 ansible_host=10.101.1.6 soft=cbot-gs botNumber=6
+bot7 ansible_host=10.101.1.7 soft=cbot-gs botNumber=7
+bot8 ansible_host=10.101.1.8 soft=cbot-gs botNumber=8
+bot9 ansible_host=10.101.1.9 soft=cbot-gs botNumber=9
+bot10 ansible_host=10.101.1.10 soft=cbot-gs botNumber=10
+bot12 ansible_host=10.101.1.12 soft=cbot-gs botNumber=12
+bot13 ansible_host=10.101.1.13 soft=cbot-gs botNumber=13
+bot15 ansible_host=10.101.1.15 soft=cbot-gs botNumber=15
+bot16 ansible_host=10.101.1.16 soft=cbot-gs botNumber=16
+
+[rusmainbots:vars]
+ansible_user=root
+[updatebots]
+#bot4 
+#bot5 
+bot6 
+#bot7 
+#bot8 
+#bot9 
+#bot10 
+#bot11 
+#bot12 
+#bot13
+#bot14 
+#bot15
+#bot16
+
+[testbots]
+test1 ansible_host=192.168.0.157 botNumber=150 soft=cbot-gs-fac
+
+[testbots:vars]
+validate_certs=no
+ansible_user=root
