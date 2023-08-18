@@ -1,5 +1,5 @@
 ---
-- hosts: "localhost"
+- hosts: "test1"
   #connection: local
   become: true
   tasks:
